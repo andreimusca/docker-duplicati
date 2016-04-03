@@ -1,5 +1,5 @@
 #!/bin/bash
-
+ 
 DUPLICATI_CMD='mono /app/Duplicati.CommandLine.exe'
 DUPLICATI_SERVER_CMD='mono /app/Duplicati.Server.exe'
 if [ -z "$1" ]; then
