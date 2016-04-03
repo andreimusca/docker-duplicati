@@ -1,7 +1,4 @@
 # Supported tags and respective Dockerfile links #
-  - `1.3.4` [(Dockerfile)](https://github.com/dmitryint/docker-duplicati/blob/duplicati_1.3.4/Dockerfile)
-  - `1.3.4-dev` [(Dockerfile)](https://github.com/dmitryint/docker-duplicati/blob/duplicati_1.3.4-dev/Dockerfile)
-  - `2.0` [(Dockerfile)](https://github.com/dmitryint/docker-duplicati/blob/duplicati_2.0/Dockerfile)
   - `canary`, `latest` [(Dockerfile)](https://github.com/dmitryint/docker-duplicati/blob/duplicati_canary/Dockerfile)
   
 # Duplicati #
@@ -21,8 +18,6 @@ Duplicati is licensed under LGPL and available for Windows and Linux (.NET 2.0+ 
 * Duplicati can make proper backups of opened or locked files using the Volume Snapshot Service (VSS) under Windows or the Logical Volume Manager (LVM) under Linux. This allows Duplicati to back up the Microsoft Outlook PST file while Outlook is running.
 
 Now, run Duplicati in docker:
-
-`docker run --rm -v /data_folder:/backup_folder:ro intersoftlab/duplicati backup /backup_folder <target url>`
-
+`docker run --name duplicati -d -p 8200:8200 --env DUPLICATI_PASS=your_pass -v /mnt/storage:/backup_folder:ro afly/duplicati`
 [Command Line Howto](https://code.google.com/p/duplicati/wiki/CommandLineHowto)
 
